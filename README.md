@@ -1,15 +1,15 @@
 # Stock-prediction_kaggle
 Introduction
 
-	Using market data provided by Intrinio and news data provided by Thomson Reuters to predict the stock price performance in the competition hosted by two sigma. The abundance of data available today enables investors to mine over it and make better investment decisions. The challenge in this competition is cleaning the data to find which is useful and which is not rather than choosing the right algorithm to predict data because data in this set is abundant and finding the content takes a lot of effort. By going through the market data and joining it with the news data to find the correct trends in market price change, we are going to predict the stock market prices for the future. 
+Using market data provided by Intrinio and news data provided by Thomson Reuters to predict the stock price performance in the competition hosted by two sigma. The abundance of data available today enables investors to mine over it and make better investment decisions. The challenge in this competition is cleaning the data to find which is useful and which is not rather than choosing the right algorithm to predict data because data in this set is abundant and finding the content takes a lot of effort. By going through the market data and joining it with the news data to find the correct trends in market price change, we are going to predict the stock market prices for the future. 
 
-	Since the data is not freely available to download, we are supposed to use Kaggle notebooks and develop a kernel for the project and cannot use other sources to code. A small sample of the market data and news data is given though that is free to download. We are planning to use various preprocessing techniques to extract useful information from those 4 million records to build a better stock market prediction model.
+Since the data is not freely available to download, we are supposed to use Kaggle notebooks and develop a kernel for the project and cannot use other sources to code. A small sample of the market data and news data is given though that is free to download. We are planning to use various preprocessing techniques to extract useful information from those 4 million records to build a better stock market prediction model.
 
-	In this project we predict a signed confidence value [-1,1] which is multiplied by the market-adjusted return of a given asset(Company/Industry) over a ten-day window. If the stock prices of a particular asset are predicted to be high over the next ten days compared to the entire market, then it will be assigned a large positive confidence value say 1.0 whereas if you expect the asset to have a negative return then you assign a large negative value say -1.0. 
+In this project we predict a signed confidence value [-1,1] which is multiplied by the market-adjusted return of a given asset(Company/Industry) over a ten-day window. If the stock prices of a particular asset are predicted to be high over the next ten days compared to the entire market, then it will be assigned a large positive confidence value say 1.0 whereas if you expect the asset to have a negative return then you assign a large negative value say -1.0. 
 
 Problem Definition and algorithm
 
-	The data that we have is related to the financial sector of the world and is pretty interesting as we can mine valuable information from that to predict change in stock markets which is pretty important these days as all the trends in prices of day-to-day products depends on the stock value of these major companies. If you have the power to predict that you can invest money in those companies to get good gains. Thus, its so important and interesting. The two sources of data are:
+The data that we have is related to the financial sector of the world and is pretty interesting as we can mine valuable information from that to predict change in stock markets which is pretty important these days as all the trends in prices of day-to-day products depends on the stock value of these major companies. If you have the power to predict that you can invest money in those companies to get good gains. Thus, its so important and interesting. The two sources of data are:
 Market data provided by Intrinio (2007 to present) contains financial market information such as opening price, closing price, trading volume, calculated returns etc. 
 News data provided by Thomson Reuters (2007 to present) which contains data about news articles/alerts published about assets, such article details, sentiment and other commentary.
 
@@ -38,14 +38,6 @@ The main goal of the project is to design a model that is capable of predicting 
 The data has some errors and outliers which must first be accounted for through preprocessing. Certain dates had exceptionally high changes in prices that could not be explained by actual events. It is assumed that these events are possible errors in documentation. To remove the errors and any outliers, The data was isolated to any datasets with price_diff that did not deviate from the mean price by more than 100. The second preprocessing step is to remove all data before 2010. This removes the influences of the financial crisis in 2008, thereby better isolating the effects of our parameters.
 Below are few graphs which we developed for easier preprocessing by employing visual analysis:
  
-
-
-
-
-
-
-
-
 
 For the modelling procedures, the data split into a 10% testing set. The first model uses the LGB algorithm with parameters:
 learning_rate': 0.01, 
